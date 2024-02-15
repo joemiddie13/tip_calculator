@@ -1,34 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react';
 
-function TipCalculator() {
-  const [billAmount, setBillAmount] = useState('');
-  const [tipPercentage, setTipPercentage] = useState(15);
-  const [totalTip, setTotalTip] = useState(0);
-
-  const calculateTip = () => {
-    const tipAmount = (billAmount * tipPercentage) / 100;
-    setTotalTip(tipAmount)
-  };
+function TipCalculator({ billAmount, tipPercentage, partyNumber }) {
+  const tipAmount = (billAmount * tipPercentage) / 100;
+  const totalBill = parseFloat(billAmount) + tipAmount;
+  const costPerPerson = totalBill / partyNumber;
 
   return (
     <div>
-      <input
-        type="number"
-        value={billAmount}
-        onChange={(e) => setBillAmount(e.target.value)}
-        placeholder="Bill Amount"
-      />
-      <input
-        type="number"
-        value={tipPercentage}
-        onChange={(e) => setTipPercentage(e.target.value)}
-        placeholder="Tip Percentage"
-      />
-      <button onClick={calculateTip}>Calculate</button>
-      <div>
-        <p>Tip Amount: {totalTip.toFixed(2)}</p>
-        <p>Total Amount: {(parseFloat(billAmount) + totalTip).toFixed(2)}</p>
-      </div>
+      <p>Tip Amount: ${tipAmount.toFixed(2)}</p>
+      <p>Total Bill: ${totalBill.toFixed(2)}</p>
+      <p>Cost per Person: ${costPerPerson.toFixed(2)}</p>
     </div>
   );
 }
