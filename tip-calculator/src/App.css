@@ -1,16 +1,29 @@
 .App {
   text-align: center;
-  /* display: flex;
-  justify-content: center; */
-}
-
-/* .TipCalculator {
   display: flex;
   justify-content: center;
-} */
+}
+
+.TipCalculator {
+  font-size: 20px;
+  color: #1fae39;
+  background-color: #f8f8f8;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.PartyNumber button {
+  display: inline-block;
+}
 
 .inputs {
-  border: 1px solid #282c34;
+  font-size: 20px;
+  color: #ad5252;
+  background-color: #f8f8f8;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .App-logo {
