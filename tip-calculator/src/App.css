@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  /* display: flex;
+  justify-content: center; */
+}
+
+/* .TipCalculator {
+  display: flex;
+  justify-content: center;
+} */
+
+.inputs {
+  border: 1px solid #282c34;
 }
 
 .App-logo {
